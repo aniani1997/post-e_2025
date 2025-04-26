@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>超E網站試做</title>
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            thublue: '#4258A6',
+            thugrey: '#464A4E',
+            thuyellow: '#FFF100',
+          },
+          fontFamily: {
+            cwtex: ['cwTeXYen', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="relative text-thugrey">
+
+  <!-- Header -->
+  <header class="fixed w-full top-0 left-0 bg-thublue text-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <!-- Logo -->
+      <div class="text-2xl font-bold">
+        <img src="/img/pe04.png" alt="東海大學" class="h-10 object-cover ">
+      </div>
+
+      <!-- Hamburger -->
+      <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">
+        ☰
+      </button>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex gap-8 font-semibold">
+        <a href="#admission" class="hover:text-thuyellow transition">招生資訊</a>
+        <a href="#program" class="hover:text-thuyellow transition">課程介紹</a>
+        <a href="#faculty" class="hover:text-thuyellow transition">師資陣容</a>
+        <a href="#events" class="hover:text-thuyellow transition">活動紀實</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Fullscreen Menu -->
+    <div id="mobile-menu"
+      class="hidden fixed inset-0 bg-white flex flex-col items-center justify-center gap-8 text-2xl text-thublue font-semibold">
+      <button id="close-btn" class="absolute top-6 right-6 text-3xl">
+        ✕
+      </button>
+      <a href="#admission" class="hover:text-thublue transition" onclick="toggleMenu()">招生資訊</a>
+      <a href="#program" class="hover:text-thublue transition" onclick="toggleMenu()">課程介紹</a>
+      <a href="#faculty" class="hover:text-thublue transition" onclick="toggleMenu()">師資陣容</a>
+      <a href="#events" class="hover:text-thublue transition" onclick="toggleMenu()">活動紀實</a>
+      <!-- 社群Icons -->
+      <div class="flex gap-6 mt-8 text-3xl text-thublue">
+        <a href="#" class="hover:text-thublue transition"><i class="fab fa-facebook-square"></i></a>
+        <a href="#" class="hover:text-thublue transition"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-thublue transition"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="hover:text-thublue transition"><i class="fab fa-line"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="mt-16 mb-[100px] max-md:mb-[40px]">
+      <div class="relative w-full">
+        <!-- Swiper -->
+        <div class="swiper mySwiper h-[576px] max-md:h-[280px]">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/img/banner1.jpeg" alt="形象圖1" class="w-full h-full object-cover">
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/banner2.jpeg" alt="形象圖2" class="w-full h-full object-cover">
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/banner3.jpg" alt="形象圖3" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <!-- 左右箭頭 -->
+          <div
+            class="swiper-button-next text-thugrey hover:text-white transition-all duration-300 transform hover:scale-125">
+          </div>
+          <div
+            class="swiper-button-prev text-thugrey hover:text-white transition-all duration-300 transform hover:scale-125">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- top news -->
+    <section id="news" class="bg-white py-16 mb-[100px] max-md:mb-[40px]">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl max-md:text-2xl font-bold text-thublue mb-10 text-center">最新消息 News</h2>
+
+        <ul class="space-y-8">
+          <a href="#">
+            <li
+              class="flex flex-col md:flex-row md:items-center justify-between border-b-2 border-gray-200 pb-4 hover:scale-[102%] transition-transform group">
+              <span class="text-thugrey font-semibold text-lg">【5月5日】招生說明會開放報名</span>
+              <div class="mt-2 md:mt-0 text-thublue font-semibold flex items-center gap-1">
+                了解更多
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </li>
+          </a>
+
+          <li
+            class="flex flex-col md:flex-row md:items-center justify-between border-b-2 border-gray-200 pb-4 hover:scale-[102%] transition-transform">
+            <span class="text-thugrey font-semibold text-lg">【4月28日】工作坊回顧影片上線</span>
+            <a href="#" class="mt-2 md:mt-0 text-thublue  font-semibold flex items-center gap-1">
+              觀看影片
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </li>
+
+          <li
+            class="flex flex-col md:flex-row md:items-center justify-between border-b-2 border-gray-200 pb-4 hover:scale-[102%] transition-transform">
+            <span class="text-thugrey font-semibold text-lg">【4月15日】國際交流計畫啟動</span>
+            <a href="#" class="mt-2 md:mt-0 text-thublue font-semibold flex items-center gap-1">
+              查看詳情
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- youtube影片 -->
+    <div class="w-full flex justify-center py-8 bg-white mb-[100px] max-md:mb-[40px]">
+      <div class="w-full max-w-3xl aspect-video">
+        <iframe class="w-full h-full rounded-lg shadow-lg"
+          src="https://www.youtube.com/embed/OwkrVGZljJg?si=eRbIMZ3qr7pwpgkt" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- vision -->
+    <section id="vision" class="bg-white py-16 mb-[100px] max-md:mb-[40px]">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl max-md:text-2xl font-bold text-thublue mb-20 max-md:mb-10 text-center">核心理念與願景</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="group bg-thublue/80 p-6 rounded-xl shadow-lg flex flex-col items-center text-white transform transition-all duration-500 hover:-translate-y-4 hover:scale-125"
+            data-aos="fade-up" data-aos-delay="0">
+            <i
+              class="fas fa-microchip text-4xl mb-4 transition-transform duration-500 group-hover:rotate-360 group-hover:scale-125"></i>
+            <h3 class="text-xl font-semibold mb-2 text-thuyellow">科技領航</h3>
+            <p class="text-center ">人文素養於管理！</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="group bg-thublue/80 p-6 rounded-xl shadow-lg flex flex-col items-center text-white transform transition-all duration-500 hover:-translate-y-4 hover:scale-125"
+            data-aos="fade-up" data-aos-delay="300">
+            <i
+              class="fas fa-hand-holding-heart text-4xl mb-4 transition-transform duration-500 group-hover:rotate-360 group-hover:scale-125"></i>
+            <h3 class="text-xl font-semibold mb-2 text-thuyellow">人文關懷</h3>
+            <p class="text-center ">從人出發，關注社會、文化與永續價值。</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="group bg-thublue/80 p-6 rounded-xl shadow-lg flex flex-col items-center text-white transform transition-all duration-500 hover:-translate-y-4 hover:scale-125"
+            data-aos="fade-up" data-aos-delay="600">
+            <i
+              class="fas fa-lightbulb text-4xl mb-4 transition-transform duration-500 group-hover:rotate-360 group-hover:scale-125"></i>
+            <h3 class="text-xl font-semibold mb-2 text-thuyellow">創新實踐</h3>
+            <p class="text-center">跨界思考，將創意轉化為具體行動。</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="group bg-thublue/80 p-6 rounded-xl shadow-lg flex flex-col items-center text-white transform transition-all duration-500 hover:-translate-y-4 hover:scale-125"
+            data-aos="fade-up" data-aos-delay="900">
+            <i
+              class="fas fa-globe-asia text-4xl mb-4 transition-transform duration-500 group-hover:rotate-360 group-hover:scale-125"></i>
+            <h3 class="text-xl font-semibold mb-2 text-thuyellow">全球視野</h3>
+            <p class="text-center">放眼國際，培育具全球競爭力的人才。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 圖文理念區 -->
+    <section class="mb-[100px] max-md:mb-[40px]">
+      <section class="py-16 pr-8 max-md:pr-0 bg-white">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start gap-12">
+
+          <!-- Image -->
+          <div class="w-full max-w-md mx-auto overflow-hidden" data-aos="fade-up" data-aos-duration="1200"
+            data-aos-delay="200">
+            <img src="/img/vision.jpg" alt="描述文字" class="w-full h-auto object-cover 
+                      rounded-tl-[20px] rounded-tr-[150px] rounded-br-[20px] rounded-bl-[20px] 
+                      shadow-lg" />
+          </div>
+
+          <!-- Text -->
+          <div class="w-full md:w-1/2 flex flex-col mt-4 justify-center" data-aos="fade-up" data-aos-duration="1200"
+            data-aos-delay="400">
+            <h2 class="text-3xl max-md:text-2xl font-bold text-thublue mb-6 border-l-8 border-thublue"><span
+                class="ml-6">學程特色</span></h2>
+            <div class="text-lg text-thugrey font-cwtex leading-relaxed mb-4">
+              <p>
+                面對未來急遽變動的政經環境，以及數位科技在工作、生活的挑戰，POST-e要培養企業經營者級別的學員，具有有更宏觀的思考能力，以及行動能力。
+              </p>
+              <p>
+                課程以實務為基礎，市場導向，需求導向，未來導向，實作導向；
+                整套學程共有【12門主題式課程】，由東海大學管理學院負責設計與執行；
+                兩門課程為一個單元，每單元課程上課時間為16小時（由東海大學授予一個正式研究所學分）；
+                每一門課皆由大中華地區的菁英教授，配合企業界菁英人士，協作執行。
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <section class="py-16 pr-8 max-md:pr-0 bg-white">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start gap-12">
+
+          <!-- Image -->
+          <div class="w-full max-w-md mx-auto overflow-hidden" data-aos="fade-up" data-aos-duration="1200"
+            data-aos-delay="200">
+            <img src="/img/vision2.jpg" alt="描述文字" class="w-full h-auto object-cover 
+                      rounded-tl-[20px] rounded-tr-[20px] rounded-br-[20px] rounded-bl-[150px] 
+                      shadow-lg" />
+          </div>
+
+          <!-- Text -->
+          <div class="w-full md:w-1/2 flex flex-col mt-4 justify-center" data-aos="fade-up" data-aos-duration="1200"
+            data-aos-delay="400">
+            <h2 class="text-3xl max-md:text-2xl font-bold text-thublue mb-6 border-l-8 border-thublue"><span
+                class="ml-6">學程理念</span></h2>
+            <div class="text-lg text-thugrey font-cwtex leading-relaxed mb-4">
+              <p>
+                素養=知識+態度+技能。 <br>
+                超E是一套能夠靈活運用的能力，<br>
+                表現在自我學習、解決問題、適應未來等行動中的學程。<br>
+                學素養的同時，我們強調三個面向：<br>
+              </p>
+              <br>
+              <p class="text-thublue font-bold">
+                1.知識：關鍵訊息的認知與探討。<br>
+                2.態度：做為世界公民對個人與社會的責任。<br>
+                3.方法：可以用什麼方法、從哪些面向解決問題。<br>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </section>
+
+    <!-- Quote區 -->
+    <section id="quote" class="py-20 bg-thublue/10 px-6 mb-[150px] max-md:mb-[40px]">
+      <div class="max-w-3xl mx-auto text-center opacity-0 translate-y-10 transition-all duration-1000"
+        id="quote-content">
+        <!-- 小logo -->
+        <div class="flex justify-center mb-6">
+          <img src="/img/logo.jpg" alt="logo" class="w-16 h-16 rounded-full">
+        </div>
+
+        <!-- 標語 -->
+        <blockquote class="text-2xl max-md:text-xl font-semibold text-thublue leading-relaxed">
+          <span class="text-6xl max-md:text-4xl">❝</span><br>
+          <div class="block max-md:hidden">
+            一個想要成功的人要隨時找機會<br>
+            吸取多元的學問與見識，能與明師益友互動<br>
+            學、問、思、辨，然後去「篤行」<br>
+            這就是超E！
+          </div>
+          <div class="hidden max-md:block">
+            一個想要成功的人要隨時找機會<br>
+            吸取多元的學問與見識<br>
+            能與明師益友互動<br>
+            學、問、思、辨<br>
+            然後去「篤行」<br>
+            這就是超E！
+          </div>
+        </blockquote>
+
+        <!-- 作者 -->
+        <p class="mt-6 text-thugrey max-md:text-sm">—— 超E創辦團隊</p>
+      </div>
+    </section>
+
+    <!-- 時間線區 -->
+    <section id="timeline" class="py-20 bg-white px-6">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-3xl max-md:text-2xl font-bold text-thublue mb-10">創辦背景與發展歷程</h2>
+
+        <!-- 切換按鈕 -->
+        <div class="flex justify-center gap-12 mb-12">
+          <button onclick="showPhase(1)"
+            class="phase-btn bg-thuyellow text-thugrey px-4 py-2 rounded-full hover:bg-thublue hover:text-white focus:bg-thublue focus:text-white transition">第1期</button>
+          <button onclick="showPhase(2)"
+            class="phase-btn bg-thuyellow text-thugrey px-4 py-2 rounded-full hover:bg-thublue hover:text-white focus:bg-thublue focus:text-white transition">第2期</button>
+        </div>
+
+        <!-- 時間線 -->
+        <div id="phase-1" class="timeline space-y-8">
+          <div class="relative pl-10 opacity-0 translate-y-10 transition-all duration-700">
+            <div class="absolute left-0 top-2 w-4 h-4 bg-thublue rounded-full"></div>
+            <div class="bg-thublue/10 p-6 rounded-lg text-left">
+              <h3 class="font-semibold text-thublue text-2xl max-md:text-xl">2019年：超E學程構想啟動</h3>
+              <p class="text-thugrey mt-2">由東海大學教授群籌組跨域小組。</p>
+            </div>
+          </div>
+          <div class="relative pl-10 opacity-0 translate-y-10 transition-all duration-700">
+            <div class="absolute left-0 top-2 w-4 h-4 bg-thublue rounded-full"></div>
+            <div class="bg-thublue/10 p-6 rounded-lg text-left">
+              <h3 class="font-semibold text-thublue text-2xl max-md:text-xl">2020年：第一期課程正式開辦</h3>
+              <p class="text-thugrey mt-2">招收首批學生，開設跨域模組。</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="phase-2" class="timeline space-y-8 hidden">
+          <div class="relative pl-10 opacity-0 translate-y-10 transition-all duration-700">
+            <div class="absolute left-0 top-2 w-4 h-4 bg-thublue rounded-full"></div>
+            <div class="bg-thublue/10 p-6 rounded-lg text-left">
+              <h3 class="font-semibold text-thublue text-2xl max-md:text-xl">2022年：第二期課程優化啟動</h3>
+              <p class="text-thugrey mt-2">增設更多跨域整合工作坊。</p>
+            </div>
+          </div>
+          <div class="relative pl-10 opacity-0 translate-y-10 transition-all duration-700">
+            <div class="absolute left-0 top-2 w-4 h-4 bg-thublue rounded-full"></div>
+            <div class="bg-thublue/10 p-6 rounded-lg text-left">
+              <h3 class="font-semibold text-thublue text-2xl max-md:text-xl">2023年：海外交流合作擴展</h3>
+              <p class="text-thugrey mt-2">與國際高校建立交流平台。</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 合作夥伴 -->
+    <section id="linkage" class="py-20 bg-white px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl max-md:text-2xl font-bold text-center mb-10 text-thublue">專業策略夥伴</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- 卡片1 -->
+          <div class="flex flex-col items-center">
+            <img src="/img/partners1.png" alt="東海大學" class=" h-36 object-cover rounded-2xl shadow-md">
+            <div class="p-6 text-center">
+              <h3 class="text-2xl max-md:text-xl font-bold text-thublue mb-2">磐石會</h3>
+              <p class="text-thugrey text-base">
+                客群市場需求建議&nbsp; &nbsp;
+                經營策略問題諮商
+                <br>
+                企業實務個案分享&nbsp; &nbsp;
+                立馬檢驗成果回饋
+              </p>
+            </div>
+          </div>
+
+          <!-- 卡片2 -->
+          <div class="flex flex-col items-center">
+            <img src="/img/partners2.png" alt="合作組織" class="h-36 object-cover rounded-2xl shadow-md">
+            <div class="p-6 text-center">
+              <h3 class="text-2xl max-md:text-xl font-bold text-thublue mb-2">資誠</h3>
+              <p class="text-thugrey text-base">
+                課程實務講師協助&nbsp; &nbsp;
+                經營策略諮商建議
+                <br>
+                企業實務個案分享&nbsp; &nbsp;
+                地區共同課程開設
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-thublue text-white pt-8 pb-20 px-6">
+    <h3 class="text-2xl font-bold mb-8">聯絡我們</h3>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+
+      <!-- Google 地圖 -->
+      <div class="flex flex-col">
+
+        <div class="w-full h-48">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.6985545991506!2d120.6117227!3d24.182302499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346915f90c7568e9%3A0x6a6dc98ff2a7a2e2!2z5p2x5rW35aSn5a24566h55CG5a246ZmiKE0p!5e0!3m2!1szh-TW!2stw!4v1745692806219!5m2!1szh-TW!2stw"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+      <!-- 聯絡表單與資訊 -->
+      <div class="flex flex-col gap-6">
+        <!-- <form class="flex flex-col gap-4">
+          <input type="text" placeholder="姓名" class="p-2 rounded bg-white text-thugrey focus:outline-none">
+          <input type="email" placeholder="Email" class="p-2 rounded bg-white text-thugrey focus:outline-none">
+          <textarea placeholder="詢問內容..." class="p-2 rounded bg-white text-thugrey focus:outline-none"></textarea>
+          <button type="submit"
+            class="bg-thuyellow text-thugrey py-2 rounded hover:bg-white hover:text-thublue transition">送出</button>
+        </form> -->
+
+        <div class="text-sm">
+          <p>信箱：<a href="mailto:example@thu.edu.tw" class="underline">example@thu.edu.tw</a></p>
+          <p>地址：東海大學管理學院</p>
+          <p>407224台中市西屯區臺灣大道四段1727號(東海大學第二校區)</p>
+          <p>電話：04-23590271</p>
+          <p>傳真：04-23506833</p>
+        </div>
+
+        <div class="flex gap-4 mt-4 text-2xl">
+          <a href="#" class="hover:text-thuyellow"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-thuyellow"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-thuyellow"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="hover:text-thuyellow"><i class="fab fa-line"></i></a>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-btn');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+
+    // hero banner
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000, // 每張停留3000ms（3秒）
+        disableOnInteraction: false, // 使用者滑動後，仍然繼續自動輪播
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    AOS.init({
+      duration: 800,  // 動畫時間
+      once: false      // 每次滑上來都重播
+    });
+
+    // 監聽滾動，出現時加上動畫
+    const quoteContent = document.getElementById('quote-content');
+
+    function handleScroll() {
+      const rect = quoteContent.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.8) {
+        quoteContent.classList.remove('opacity-0', 'translate-y-10');
+        quoteContent.classList.add('opacity-100', 'translate-y-0');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    // 切換期數
+    function showPhase(phase) {
+      document.getElementById('phase-1').classList.add('hidden');
+      document.getElementById('phase-2').classList.add('hidden');
+      document.getElementById(`phase-${phase}`).classList.remove('hidden');
+      observeTimeline(); // 切換期數也重新綁定動畫
+    }
+
+    // Intersection Observer 動畫
+    function observeTimeline() {
+      const timelineItems = document.querySelectorAll(`#phase-${document.querySelector('.timeline:not(.hidden)').id.split('-')[1]} .relative`);
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      timelineItems.forEach(item => {
+        observer.observe(item);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', observeTimeline);
+  </script>
+
+</body>
+
+</html>
