@@ -28,6 +28,15 @@
           fontFamily: {
             cwtex: ['cwTeXYen', 'sans-serif'],
           },
+          keyframes: {
+            glow: {
+              '0%, 100%': { boxShadow: '0 0 0px #FFF100' },
+              '50%': { boxShadow: '0 0 20px #FFF100' },
+            }
+          },
+          animation: {
+            glow: 'glow 2s infinite',
+          },
         }
       }
     }
@@ -105,6 +114,59 @@
         </div>
       </div>
     </section>
+
+    <!-- 功能卡片 -->
+    <section class="w-full bg-thugrey/10 py-16 mb-[100px] max-md:mb-[40px]">
+      <div class="max-w-7xl mx-auto px-4">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <!-- 招生資訊 -->
+          <a href="">
+            <div class="relative group overflow-hidden rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="0">
+              <img src="/img/card1.jpg" alt="招生資訊"
+                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <h3 class="text-white text-2xl font-bold group-hover:text-thuyellow transition-colors">招生資訊</h3>
+              </div>
+            </div>
+          </a>
+
+          <!-- 課程介紹 -->
+          <a href="">
+            <div class="relative group overflow-hidden rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+              <img src="/img/card2.jpg" alt="課程介紹"
+                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <h3 class="text-white text-2xl font-bold group-hover:text-thuyellow transition-colors">課程介紹</h3>
+              </div>
+            </div>
+          </a>
+
+          <!-- 師資陣容 -->
+          <a href="">
+            <div class="relative group overflow-hidden rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="600">
+              <img src="/img/card3.jpg" alt="師資陣容"
+                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <h3 class="text-white text-2xl font-bold group-hover:text-thuyellow transition-colors">師資陣容</h3>
+              </div>
+            </div>
+          </a>
+
+          <!-- 活動紀實 -->
+          <a href="">
+            <div class="relative group overflow-hidden rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="900">
+              <img src="/img/card4.jpg" alt="活動紀實"
+                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <h3 class="text-white text-2xl font-bold group-hover:text-thuyellow transition-colors">活動紀實</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
 
     <!-- top news -->
     <section id="news" class="bg-white py-16 mb-[100px] max-md:mb-[40px]">
@@ -397,6 +459,17 @@
 
       </div>
     </section>
+
+    <!-- 固定報名按鈕 -->
+    <!-- 右下角固定報名按鈕：Hover變色版 -->
+    <a href="#admission"
+      class="fixed bottom-6 right-6 bg-thuyellow text-thugrey font-bold w-20 h-20 flex items-center justify-center text-center rounded-full shadow-lg z-50 animate-glow transition-all duration-300 ease-in-out hover:bg-thublue hover:text-white hover:shadow-2xl hover:scale-110">
+      立即<br>報名
+    </a>
+
+
+
+
 
   </main>
 
